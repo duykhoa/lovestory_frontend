@@ -10,12 +10,27 @@
 
   <template>
     <div class="container-fluid">
-      <nav>
+      <nav class="green lighten-1">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+          </ul>
+
+          <ul id="slide-out" class="side-nav">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </div>
       </nav>
 
       <div class="parallax-container">
         <div class="parallax"><img src="https://raw.githubusercontent.com/duykhoa/lovestory-assets/master/slide1.jpg"></div>
       </div>
+
       <div class="section white">
         <div class="row container">
           <h2 class="header">Parallax</h2>
@@ -31,8 +46,8 @@
   Polymer({
     is: 'home-page',
     ready: function() {
-      debugger
       $(".parallax").parallax();
+      $(".button-collapse").sideNav();
     }
   });
 </script>
