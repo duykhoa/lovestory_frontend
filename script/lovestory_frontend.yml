@@ -1,0 +1,7 @@
+name: lovestory_frontend
+root: /Users/kevin/Working/demo/node/lovestory_frontend
+
+windows:
+  - editor: vim
+  - server: script/docker_run
+  - logs: # nothing
