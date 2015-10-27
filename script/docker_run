@@ -1,0 +1,17 @@
+#!/bin/bash
+
+PWD=`pwd`
+CONTAINER=lovestory_frontend_container
+IP=`boot2docker ip` # if you're using mac
+
+function kill_all_docker  {
+  docker stop $(docker ps -a -q)
+  docker rm $(docker ps -a -q)
+}
+
+kill_all_docker
+
+docker build -t mydockernodejs $PWD
+docker run -d -p 3005:3001 --name $CONTAINER -v $PWD:/app mydockernodejs
+
+sleep 5 && open http://$IP:3005
