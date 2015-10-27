@@ -1,0 +1,22 @@
+{
+  "name": "lovestory_frontend",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Duy Khoa <duykhoa12t@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/duykhoa/lovestory_frontend",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  }
+}
