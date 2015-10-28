@@ -14,13 +14,18 @@
     :host ::content .text-wrapper {
       width: 100%;
     }
+
+    :host ::content .login {
+      margin: 30px 0;
+    }
   </style>
 
   <template>
     <div class="container-fluid">
       <paper-navigation
         nav-color="green lighten-1"
-        menu-items='[{"title":"Login", "url":"#"}, {"title":"Sign up", "url": "#"}]'
+        menu-items='[{"title":"Login", "url":"#login-modal"}, {"title":"Sign up", "url": "#signup-modal"}]'
+        item-class="modal-trigger"
       ></paper-navigation>
 
       <div class="parallax-container">
@@ -43,6 +48,30 @@
         </div>
       </div>
     </div>
+
+    <div id="login-modal" class="modal">
+      <div class="modal-content center">
+        <h4>Login &amp; continue writing</h4>
+        <h5>your love page at lovestory.space</h5>
+        <div class="login">
+          <a class="waves-effect waves-light btn btn-large indigo darken-1" href="/users/auth/facebook">
+            <span>Facebook</span></a>
+        </div>
+        <h6>100% guarantees your privacy</h6>
+      </div>
+    </div>
+
+    <div id="signup-modal" class="modal">
+      <div class="modal-content center">
+        <h4>Create your account</h4>
+        <h5>at lovestory.space</h5>
+        <div class="login">
+          <a class="waves-effect waves-light btn btn-large indigo darken-1" href="/users/auth/facebook">
+            <span>Facebook</span></a>
+        </div>
+        <h6>100% guarantees your privacy</h6>
+      </div>
+    </div>
   </template>
 
 </dom-module>
@@ -53,6 +82,9 @@
     ready: function() {
       $(".parallax").parallax();
       $(".button-collapse").sideNav();
+      this.async(function() {
+        $(".modal-trigger").leanModal();
+      }, 50);
     }
   });
 </script>
