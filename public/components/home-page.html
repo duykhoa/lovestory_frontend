@@ -18,21 +18,10 @@
 
   <template>
     <div class="container-fluid">
-      <nav class="green lighten-1">
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Love Story</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Sign up</a></li>
-          </ul>
-
-          <ul id="slide-out" class="side-nav">
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Sign up</a></li>
-          </ul>
-          <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-        </div>
-      </nav>
+      <paper-navigation
+        nav-color="green lighten-1"
+        menu-items='[{"title":"Login", "url":"#"}, {"title":"Sign up", "url": "#"}]'
+      ></paper-navigation>
 
       <div class="parallax-container">
         <div class="parallax">
