@@ -6,29 +6,45 @@
       display: block;
       box-sizing: border-box;
     }
+
+    :host ::content .full-height {
+      height: 100%;
+    }
+
+    :host ::content .text-wrapper {
+      width: 100%;
+    }
   </style>
 
   <template>
     <div class="container-fluid">
       <nav class="green lighten-1">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Logo</a>
+          <a href="#" class="brand-logo">Love Story</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign up</a></li>
           </ul>
 
           <ul id="slide-out" class="side-nav">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign up</a></li>
           </ul>
           <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </div>
       </nav>
 
       <div class="parallax-container">
-        <div class="parallax"><img src="https://raw.githubusercontent.com/duykhoa/lovestory-assets/master/slide1.jpg"></div>
+        <div class="parallax">
+          <img src="https://raw.githubusercontent.com/duykhoa/lovestory-assets/master/slide1.jpg">
+        </div>
+
+        <div class="valign-wrapper full-height white-text">
+          <div class="valign white-text text-wrapper center">
+            <h1>A space for love</h1>
+            <h5>Keep all the memories that only 2 of you know and share here</h5>
+          </div>
+        </div>
       </div>
 
       <div class="section white">
