@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var config = {api_endpoint: 'http://localhost:3000'};
+var config = require('konfig')();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
