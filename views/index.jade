@@ -1,2 +1,5 @@
-input(value="#{config.app.api_endpoint}" type="hidden" name="api-endpoint")
-include index.html
+extends layout
+
+block content
+  input(value="#{config.app.api_endpoint}" type="hidden" name="api-endpoint")
+  home-page
