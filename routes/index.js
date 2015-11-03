@@ -5,7 +5,7 @@ var config = require('konfig')();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: 'Express',
+    title: 'Love Story',
     config: config
   });
 });

@@ -1,0 +1,25 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="app-container">
+  <style>
+    :host {
+      display: block;
+    }
+
+  </style>
+
+  <template>
+    <home-page />
+  </template>
+
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'app-container',
+    properties: {
+      backendServer: String,
+      jwtToken: String
+    }
+  });
+</script>

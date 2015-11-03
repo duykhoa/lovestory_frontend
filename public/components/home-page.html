@@ -81,11 +81,11 @@
   Polymer({
     is: 'home-page',
     ready: function() {
-      $(".parallax").parallax();
-      $(".button-collapse").sideNav();
       this.async(function() {
+        $(".button-collapse").sideNav();
+        $(".parallax").parallax();
         $(".modal-trigger").leanModal();
-      }, 50);
+      });
     },
     fbLoginLink: function() {
       host = $('input[name="api-endpoint"]').val();

@@ -2,4 +2,4 @@ extends layout
 
 block content
   input(value="#{config.app.api_endpoint}" type="hidden" name="api-endpoint")
-  home-page
+  app-container(backend-server="#{config.app.api_endpoint}")
