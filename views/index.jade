@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  input(value="#{config.app.api_endpoint}" type="hidden" name="api-endpoint")
-  app-container(backend-server="#{config.app.api_endpoint}")
+  app-container(
+    backend-server="#{config.app.api_endpoint}"
+    jwt-token="#{jwt_token}"
+  )

@@ -9,7 +9,9 @@
   </style>
 
   <template>
-    <home-page />
+    <template is="dom-if" if="{{typeof jwtToken === "undefined"}}">
+      <home-page></home-page>
+    </template>
   </template>
 
 </dom-module>
@@ -20,6 +22,8 @@
     properties: {
       backendServer: String,
       jwtToken: String
+    },
+    ready: function() {
     }
   });
 </script>
