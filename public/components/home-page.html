@@ -37,7 +37,7 @@
           <div class="valign white-text text-wrapper center">
             <h1>A space for love</h1>
             <h5>Keep all the memories that only 2 of you know and share here</h5>
-            <a class="btn btn-large green waves wave-light" href$=[[fbLoginLink()]]>Create yours</a>
+            <a class="btn btn-large green waves wave-light modal-trigger" href="#login-modal">Create yours</a>
           </div>
         </div>
       </div>
@@ -55,8 +55,11 @@
         <h4>Login &amp; continue writing</h4>
         <h5>your love page at lovestory.space</h5>
         <div class="login">
-          <a class="waves-effect waves-light btn btn-large indigo darken-1" href="/users/auth/facebook">
-            <span>Facebook</span></a>
+          <a class="waves-effect waves-light btn btn-large indigo darken-1"
+            href$="{{fbLoginLink(endpoint)}}"
+          >
+            <span>Facebook</span>
+          </a>
         </div>
         <h6>100% guarantees your privacy</h6>
       </div>
@@ -67,8 +70,11 @@
         <h4>Create your account</h4>
         <h5>at lovestory.space</h5>
         <div class="login">
-          <a class="waves-effect waves-light btn btn-large indigo darken-1" href="/users/auth/facebook">
-            <span>Facebook</span></a>
+          <a class="waves-effect waves-light btn btn-large indigo darken-1"
+            href$="{{fbLoginLink(endpoint)}}"
+          >
+            <span>Facebook</span>
+          </a>
         </div>
         <h6>100% guarantees your privacy</h6>
       </div>
@@ -87,9 +93,8 @@
         $(".modal-trigger").leanModal();
       });
     },
-    fbLoginLink: function() {
-      host = $('input[name="api-endpoint"]').val();
-      return host + "/users/auth/facebook";
+    fbLoginLink: function(endpoint) {
+      return endpoint + "/users/auth/facebook";
     }
   });
 </script>

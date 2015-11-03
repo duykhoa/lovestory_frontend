@@ -10,7 +10,7 @@
 
   <template>
     <template is="dom-if" if="{{typeof jwtToken === "undefined"}}">
-      <home-page></home-page>
+      <home-page endpoint="[[backendServer]]"></home-page>
     </template>
   </template>
 
