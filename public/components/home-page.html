@@ -37,6 +37,7 @@
           <div class="valign white-text text-wrapper center">
             <h1>A space for love</h1>
             <h5>Keep all the memories that only 2 of you know and share here</h5>
+            <a class="btn btn-large green waves wave-light" href$=[[fbLoginLink()]]>Create yours</a>
           </div>
         </div>
       </div>
@@ -85,6 +86,10 @@
       this.async(function() {
         $(".modal-trigger").leanModal();
       }, 50);
+    },
+    fbLoginLink: function() {
+      host = $('input[name="api-endpoint"]').val();
+      return host + "/users/auth/facebook";
     }
   });
 </script>
