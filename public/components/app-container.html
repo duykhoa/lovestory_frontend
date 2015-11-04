@@ -9,8 +9,12 @@
   </style>
 
   <template>
-    <template is="dom-if" if="{{existJWT()}}">
+    <template is="dom-if" if="{{!existJWT(jwtToken)}}">
       <home-page endpoint="[[backendServer]]"></home-page>
+    </template>
+
+    <template is="dom-if" if="{{existJWT(jwtToken)}}">
+      <h1>Welcome back, boss Khoa</h1>
     </template>
   </template>
 </dom-module>
@@ -20,12 +24,29 @@
     is: 'app-container',
     properties: {
       backendServer: String,
-      jwtToken: String
+      jwtToken: {
+        type: String,
+      }
     },
     ready: function() {
+      if (!this.getJWT() && this.jwtToken) {
+        this.setJWT();
+      }
     },
     existJWT: function(jwtToken) {
-      return(typeof jwtToken === "undefined");
+      return (jwtToken !== "undefined") || this.getJWT();
+    },
+    getJWT: function() {
+      return sessionStorage.jwtToken;
+    },
+    setJWT: function() {
+      if (this.existJWT()) {
+        if(typeof(Storage) !== "undefined") {
+          sessionStorage.setItem("jwtToken", this.jwtToken);
+        } else {
+          console.log("no support");
+        }
+      }
     }
   });
 </script>
