@@ -9,7 +9,7 @@
   </style>
 
   <template>
-    <template is="dom-if" if="existJWT()">
+    <template is="dom-if" if="{{existJWT()}}">
       <home-page endpoint="[[backendServer]]"></home-page>
     </template>
   </template>
