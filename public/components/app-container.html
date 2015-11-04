@@ -9,11 +9,10 @@
   </style>
 
   <template>
-    <template is="dom-if" if="{{typeof jwtToken === "undefined"}}">
+    <template is="dom-if" if="existJWT()">
       <home-page endpoint="[[backendServer]]"></home-page>
     </template>
   </template>
-
 </dom-module>
 
 <script>
@@ -24,6 +23,9 @@
       jwtToken: String
     },
     ready: function() {
+    },
+    existJWT: function(jwtToken) {
+      return(typeof jwtToken === "undefined");
     }
   });
 </script>
